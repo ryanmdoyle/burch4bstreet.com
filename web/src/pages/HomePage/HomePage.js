@@ -3,7 +3,7 @@ const HomePage = () => {
     <div className="w-screen h-screen">
       <div className="container mx-auto h-full">
         <section className="p-4 md:p-8 lg:h-1/3 w-full flex flex-col lg:flex-row justify-center items-center">
-          <div className="w-1/2 lg:w-1/3 lg:h-full flex justify-center items-center">
+          <div className="w-1/2 lg:w-1/4 xl:w-1/5 lg:h-full flex justify-center items-center">
             <img
               src="/lyndsay.jpeg"
               alt="headshot"
