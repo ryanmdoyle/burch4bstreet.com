@@ -7,8 +7,10 @@ module.exports = {
         sofiaGreen: '#2DBFB0',
       },
       fontFamily: {
-        display: ['Oswald'],
-        body: ['Open Sans'],
+        display: ['"Averia Serif Libre"'],
+        subdisplay: ['Roboto'],
+        // body: ['"Open Sans"'],
+        body: ['Roboto'],
       },
     },
   },
