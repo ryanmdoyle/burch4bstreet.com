@@ -24,10 +24,10 @@ const MessageForm = (props) => {
 
         <Label
           name="from"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
+          className="rw-label font-display text-sofiaGreen text-lg lg:text:lg"
+          errorClassName="rw-label font-display text-red-500 text-xl"
         >
-          From
+          Name
         </Label>
         <TextField
           name="from"
@@ -36,14 +36,14 @@ const MessageForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="from" className="rw-field-error" />
+        <FieldError name="from" className="rw-field-error text-red-500" />
 
         <Label
           name="email"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
+          className="rw-label font-display text-sofiaGreen text-lg lg:text:lg"
+          errorClassName="rw-label font-display text-red-500 text-xl"
         >
-          Email
+          Your Email Address
         </Label>
         <TextField
           name="email"
@@ -52,12 +52,12 @@ const MessageForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="email" className="rw-field-error" />
+        <FieldError name="email" className="rw-field-error text-red-500" />
 
         <Label
           name="subject"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
+          className="rw-label font-display text-sofiaGreen text-lg lg:text:lg"
+          errorClassName="rw-label font-display text-red-500 text-xl"
         >
           Subject
         </Label>
@@ -68,14 +68,14 @@ const MessageForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="subject" className="rw-field-error" />
+        <FieldError name="subject" className="rw-field-error text-red-500" />
 
         <Label
           name="message"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
+          className="rw-label font-display text-sofiaGreen text-lg lg:text:lg"
+          errorClassName="rw-label font-display text-red-500 text-xl"
         >
-          Message
+          Message of Support!
         </Label>
         <TextField
           name="message"
@@ -84,11 +84,14 @@ const MessageForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="message" className="rw-field-error" />
+        <FieldError name="message" className="rw-field-error text-red-500" />
 
         <div className="rw-button-group">
-          <Submit disabled={props.loading} className="rw-button rw-button-blue">
-            Save
+          <Submit
+            disabled={props.loading}
+            className="rw-button bg-sofiaGreen hover:bg-sofiaGreenDark text-white"
+          >
+            Send!
           </Submit>
         </div>
       </Form>

@@ -9,15 +9,15 @@ const ShowSupportPage = () => {
   return (
     <>
       <Link to={routes.home()}>
-        <span className="text-sofiaGreen hover:text-sofiaGreenDark">
-          <CircleArrowLeft />
+        <span className="text-sofiaGreen hover:text-sofiaGreenDark flex justify-center items-center">
+          <CircleArrowLeft /> Go Back
         </span>
       </Link>
       <h2 className="text-xl md:text-2xl lg:text-3xl text-sofiaGreen font-display mt-4 text-center">
         Send a message of support to the B-Street Board of Directors
       </h2>
       <div className="w-full flex justify-center items-center my-8">
-        <div className="w-full h-32 md:w-3/4 lg-1/3 flex flex-col md:flex-row justify-between items-center text-white">
+        <div className="w-full md:w-5/6 lg:w-2/3 xl:w-1/2 h-32 md:h-12 flex flex-col md:flex-row justify-between items-center text-white">
           <button
             className="bg-sofiaGreen hover:bg-sofiaGreenDark h-8 rounded-md px-4 lg:px-6 py-2 lg:py-4 flex justify-center items-center"
             onClick={() => {

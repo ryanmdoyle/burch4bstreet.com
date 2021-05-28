@@ -25,15 +25,13 @@ const NewMessage = ({ subject, message }) => {
   )
 
   const onSave = (input) => {
-    createMessage({ variables: { input } })
+    console.log('form input!', input)
+    // createMessage({ variables: { input } })
   }
 
   return (
-    <div className="rw-segment">
-      <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">New Message</h2>
-      </header>
-      <div className="rw-segment-main">
+    <div className="flex justify-center w-full">
+      <div className="w-full md:w-5/6 lg:w-2/3 xl:w-1/2">
         <MessageForm
           onSave={onSave}
           loading={loading}
