@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         sofiaGreen: '#2DBFB0',
+        sofiaGreenDark: '#479E94',
       },
       fontFamily: {
         display: ['"Averia Serif Libre"'],
