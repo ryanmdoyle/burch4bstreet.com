@@ -3,8 +3,6 @@ import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 import MessageForm from 'src/components/MessageForm/MessageForm'
 
-import { QUERY } from 'src/components/MessagesCell/MessagesCell'
-
 const CREATE_MESSAGE_MUTATION = gql`
   mutation CreateMessageMutation($input: CreateMessageInput!) {
     createMessage(input: $input) {
@@ -19,14 +17,13 @@ const NewMessage = ({ subject, message }) => {
     {
       onCompleted: () => {
         toast.success('Message created')
-        navigate(routes.messages())
+        // navigate(routes.messages())
       },
     }
   )
 
   const onSave = (input) => {
-    console.log('form input!', input)
-    // createMessage({ variables: { input } })
+    createMessage({ variables: { input } })
   }
 
   return (
