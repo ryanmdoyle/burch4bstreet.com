@@ -14,7 +14,7 @@ const ShowSupportPage = () => {
         </span>
       </Link>
       <h2 className="text-xl md:text-2xl lg:text-3xl text-sofiaGreen font-display my-4 text-center">
-        Send a message of support to the B-Street Board of Directors
+        Send a message of support to the B Street Board of Directors
       </h2>
       <p className="font-body text-center">
         Select an option below to get started.
