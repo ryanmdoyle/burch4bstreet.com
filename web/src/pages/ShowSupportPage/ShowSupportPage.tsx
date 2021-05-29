@@ -13,9 +13,12 @@ const ShowSupportPage = () => {
           <CircleArrowLeft /> Go Back
         </span>
       </Link>
-      <h2 className="text-xl md:text-2xl lg:text-3xl text-sofiaGreen font-display mt-4 text-center">
+      <h2 className="text-xl md:text-2xl lg:text-3xl text-sofiaGreen font-display my-4 text-center">
         Send a message of support to the B-Street Board of Directors
       </h2>
+      <p className="font-body text-center">
+        Select an option below to get started.
+      </p>
       <div className="w-full flex justify-center items-center my-8">
         <div className="w-full md:w-5/6 lg:w-2/3 xl:w-1/2 h-32 md:h-12 flex flex-col md:flex-row justify-between items-center text-white">
           <button

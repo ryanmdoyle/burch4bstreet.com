@@ -3,7 +3,7 @@ import SupportButton from 'src/components/SupportButton/SupportButton'
 const HomePage = () => {
   return (
     <>
-      <div className="w-full flex justify-center items-center mb-8 mt-4">
+      <div className="w-full flex justify-center items-center mb-8">
         <SupportButton />
       </div>
       <h2 className="font-display text-xl md:text-2xl text-sofiaGreen">
@@ -53,6 +53,9 @@ const HomePage = () => {
         Acting Program. She is a current participant in Theatre Bay Area&apos;s
         ATLAS Program for Directors. SDC Associate Member.
       </p>
+      <div className="w-full flex justify-center items-center mt-12">
+        <SupportButton />
+      </div>
     </>
   )
 }

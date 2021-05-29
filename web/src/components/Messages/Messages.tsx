@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes } from '@redwoodjs/router'
 
-import { QUERY } from 'src/components/MessagesCell'
+import { QUERY } from 'src/components/MessagesCell/MessagesCell'
 
 const DELETE_MESSAGE_MUTATION = gql`
   mutation DeleteMessageMutation($id: String!) {

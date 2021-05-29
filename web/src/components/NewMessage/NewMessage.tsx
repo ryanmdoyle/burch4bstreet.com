@@ -16,8 +16,8 @@ const NewMessage = ({ subject, message }) => {
     CREATE_MESSAGE_MUTATION,
     {
       onCompleted: () => {
-        toast.success('Message created')
-        // navigate(routes.messages())
+        toast.success('Message sent! Thanks for the support.')
+        navigate(routes.home())
       },
     }
   )
