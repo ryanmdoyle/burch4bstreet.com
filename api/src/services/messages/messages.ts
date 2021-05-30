@@ -5,6 +5,7 @@ import { BeforeResolverSpecType } from '@redwoodjs/api'
 
 import nodemailer from 'nodemailer'
 import md5 from 'md5'
+import { requireAuth } from 'src/lib/auth'
 
 // Used when the environment variable REDWOOD_SECURE_SERVICES=1
 export const beforeResolver = (rules: BeforeResolverSpecType) => {
@@ -13,10 +14,12 @@ export const beforeResolver = (rules: BeforeResolverSpecType) => {
 }
 
 export const messages = () => {
+  requireAuth({ role: 'ADMIN' })
   return db.message.findMany()
 }
 
 export const message = ({ id }: Prisma.MessageWhereUniqueInput) => {
+  requireAuth({ role: 'ADMIN' })
   return db.message.findUnique({
     where: { id },
   })
@@ -76,6 +79,7 @@ interface UpdateMessageArgs extends Prisma.MessageWhereUniqueInput {
 }
 
 export const updateMessage = ({ id, input }: UpdateMessageArgs) => {
+  requireAuth({ role: 'ADMIN' })
   return db.message.update({
     data: input,
     where: { id },
@@ -83,6 +87,7 @@ export const updateMessage = ({ id, input }: UpdateMessageArgs) => {
 }
 
 export const deleteMessage = ({ id }: Prisma.MessageWhereUniqueInput) => {
+  requireAuth({ role: 'ADMIN' })
   return db.message.delete({
     where: { id },
   })
