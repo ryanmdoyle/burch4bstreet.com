@@ -4,7 +4,7 @@ import NewMessage from 'src/components/NewMessage/NewMessage'
 import CircleArrowLeft from 'src/components/CircleArrowLeft/CircleArrowLeft'
 
 const ShowSupportPage = () => {
-  const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState(null) //none, help, complete
 
   return (
     <>
@@ -47,7 +47,7 @@ const ShowSupportPage = () => {
           </button>
         </div>
       </div>
-      {message === 'none' && <NewMessage subject={'no help'} message={''} />}
+      {message === 'none' && <NewMessage subject={''} message={''} />}
       {message === 'help' && (
         <NewMessage
           subject={'some help'}

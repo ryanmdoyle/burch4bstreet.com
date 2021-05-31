@@ -38,6 +38,9 @@ const MessageForm = (props) => {
         >
           Name
         </Label>
+        <span className="text-gray-500 italic text-xs">
+          Your name will be shared with your message
+        </span>
         <TextField
           name="from"
           defaultValue={props.message?.from}
@@ -54,6 +57,9 @@ const MessageForm = (props) => {
         >
           Your Email Address
         </Label>
+        <span className="text-gray-500 italic text-xs">
+          Your email not be shared
+        </span>
         <TextField
           name="email"
           defaultValue={props.message?.email}
