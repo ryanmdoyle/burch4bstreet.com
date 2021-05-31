@@ -4,6 +4,7 @@ import {
   FieldError,
   Label,
   TextField,
+  TextAreaField,
   Submit,
 } from '@redwoodjs/forms'
 import ReCAPTCHA from 'react-google-recaptcha'
@@ -91,10 +92,10 @@ const MessageForm = (props) => {
         >
           Message of Support!
         </Label>
-        <TextField
+        <TextAreaField
           name="message"
           defaultValue={props.message?.message}
-          className="rw-input"
+          className="rw-input h-96"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
