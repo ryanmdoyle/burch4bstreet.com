@@ -6,6 +6,26 @@ import CircleArrowLeft from 'src/components/CircleArrowLeft/CircleArrowLeft'
 const ShowSupportPage = () => {
   const [message, setMessage] = useState(null)
 
+  const subject = 'In support of Lyndsay Burch for Artistic Director'
+
+  const completedText = `To Whom it May Concern,
+
+It has come to my attention that the B Street Theatre Board of Directors is beginning a search for the company’s next Artistic Director, and I am writing to you to express my support for Lyndsay Burch. While Buck Busfield’s departure will leave big shoes for anyone to fill, I have no doubt that Ms. Burch is the best candidate for the job, and I strongly encourage you to select her.
+
+Ms. Burch brings to B Street a national and international professional profile that is well-known and respected in this industry, strong leadership skills, and an innovative approach to modern issues faced by theatre companies of all sizes. She is incredibly passionate about this company and has a strong vision for this future, in addition to being already familiar with the unique Acting Company structure, the educational mission, and the high-quality of work for which B Street is known nationally.
+
+I wish you the best in your search, however, in my opinion, your next Artistic Director is already in your building.
+`
+
+  const partialText = `To Whom it May Concern,
+
+It has come to my attention that the B Street Theatre Board of Directors is beginning a search for the company’s next Artistic Director, and I am writing to you to express my support for Lyndsay Burch. While Buck Busfield’s departure will leave big shoes for anyone to fill, I have no doubt that Ms. Burch is the best candidate for the job, and I strongly encourage you to select her.
+
+[INSERT HERE Why do you think Lyndsay is the best choice for B Street? Prompt ideas: share a time you worked with Lyndsay on a production or project; a time you’ve seen her display strong leadership; a difference she’s made in your career.]
+
+I wish you the best in your search, however, in my opinion, your next Artistic Director is already in your building.
+`
+
   return (
     <>
       <Link to={routes.home()}>
@@ -47,18 +67,12 @@ const ShowSupportPage = () => {
           </button>
         </div>
       </div>
-      {message === 'none' && <NewMessage subject={'no help'} message={''} />}
+      {message === 'none' && <NewMessage subject={subject} message={''} />}
       {message === 'help' && (
-        <NewMessage
-          subject={'some help'}
-          message={'a message with fill in the blanks'}
-        />
+        <NewMessage subject={subject} message={partialText} />
       )}
       {message === 'complete' && (
-        <NewMessage
-          subject={'complete'}
-          message={'A totally complete message'}
-        />
+        <NewMessage subject={subject} message={completedText} />
       )}
     </>
   )
