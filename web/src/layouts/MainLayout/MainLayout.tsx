@@ -9,7 +9,7 @@ const MainLayout: React.FunctionComponent = ({ children }) => {
       />
       <div className="container mx-auto py-8">
         {/* Image and Page Title */}
-        <section className="pt-4 px-4 md:p-8 lg:h-1/3 w-full flex flex-col lg:flex-row justify-center items-center">
+        <section className="pt-4 px-4 lg:p-8 lg:h-1/3 w-full flex flex-col lg:flex-row justify-center items-center">
           <div className="w-1/2 lg:w-1/4 xl:w-1/5 lg:h-full flex justify-center items-center">
             <img
               src="/lyndsay.jpeg"
