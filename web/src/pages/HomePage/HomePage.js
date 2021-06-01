@@ -1,4 +1,3 @@
-import { navigate, routes } from '@redwoodjs/router'
 import { Helmet } from 'react-helmet'
 
 import SupportButton from 'src/components/SupportButton/SupportButton'

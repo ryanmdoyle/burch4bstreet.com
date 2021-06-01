@@ -1,4 +1,3 @@
-import { Link, routes } from '@redwoodjs/router'
 import { Helmet } from 'react-helmet'
 
 import MessagesPublicCell from 'src/components/MessagesPublicCell'
