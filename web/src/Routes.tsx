@@ -13,6 +13,7 @@ import MessagePage from 'src/pages/MessagePage/MessagePage'
 import MessagesPage from 'src/pages/MessagesPage/MessagesPage'
 import NewMessagePage from 'src/pages/NewMessagePage/NewMessagePage'
 import EditMessagePage from 'src/pages/EditMessagePage/EditMessagePage'
+import LoginPage from 'src/pages/LoginPage/LoginPage'
 
 const Routes = () => {
   return (
@@ -20,8 +21,9 @@ const Routes = () => {
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/comingsoon" page={ComingSoonPage} name="comingSoon" />
       <Set wrap={[MainLayout]}>
-        <Route path="/show-support" page={ShowSupportPage} name="showSupport" />
         <Route path="/" page={HomePage} name="home" />
+        <Route path="/show-support" page={ShowSupportPage} name="showSupport" />
+        <Route path="/letters" page={LettersPage} name="letters" />
         <Route notfound page={NotFoundPage} />
       </Set>
       <Private unauthenticated="home" role="ADMIN">

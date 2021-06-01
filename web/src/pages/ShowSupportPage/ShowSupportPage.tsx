@@ -4,7 +4,7 @@ import NewMessage from 'src/components/NewMessage/NewMessage'
 import CircleArrowLeft from 'src/components/CircleArrowLeft/CircleArrowLeft'
 
 const ShowSupportPage = () => {
-  const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState(null) //none, help, complete
 
   const subject = 'In support of Lyndsay Burch for Artistic Director'
 

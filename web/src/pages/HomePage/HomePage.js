@@ -9,7 +9,7 @@ const HomePage = () => {
       <div className="w-full flex justify-center items-center mb-8">
         <SupportButton />
       </div>
-      <p className="font-body text-gray-800">
+      <p className="font-display text-lg text-sofiaGreen">
         Since October of 2013, Lyndsay Burch has been working to elevate and
         expand the work of B Street Theatre. Her passion and leadership have
         been instrumental in taking B Street Theatre from the “little shack by
@@ -19,6 +19,9 @@ const HomePage = () => {
         for the Performing Arts.
       </p>
       <br></br>
+      <h3 className="font-display text-xl text-sofiaGreen">
+        Success & Expansion
+      </h3>
       <p className="font-body text-gray-800">
         During Lyndsay’s time with the theatre, Actor’s Equity Association
         re-evaluated the company’s contract level from SPT 10 and SPT 8 to LORT
@@ -41,6 +44,9 @@ const HomePage = () => {
         Theatre Company).
       </p>
       <br></br>
+      <h3 className="font-display text-xl text-sofiaGreen">
+        Diversity & Inclusion
+      </h3>
       <p className="font-body text-gray-800">
         As many theatre companies across the country struggled (and occasionally
         failed) to examine their diversity, equity, and inclusion practices in
@@ -64,6 +70,9 @@ const HomePage = () => {
         current trajectory of becoming a more inclusive and equitable space.
       </p>
       <br></br>
+      <h3 className="font-display text-xl text-sofiaGreen">
+        Sacramento&apos;s Choice
+      </h3>
       <p className="font-body text-gray-800">
         If not for Lyndsay’s tenacity, B Street would not have made it through
         2020 with such success. She has been at the helm of the digital theatre
