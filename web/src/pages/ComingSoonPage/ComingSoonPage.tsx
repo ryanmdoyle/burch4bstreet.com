@@ -1,10 +1,17 @@
 import { Link, routes } from '@redwoodjs/router'
+import { Helmet } from 'react-helmet'
 
 const ComingSoonPage = () => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <h1 className="text-3xl font-display text-sofiaGreen">Coming Soon!</h1>
-    </div>
+    <>
+      <Helmet>
+        <title>Lyndsay Burch for B Street - Coming Soon</title>
+        <meta name="description" content="Coming Soon!" />
+      </Helmet>
+      <div className="w-screen h-screen flex justify-center items-center">
+        <h1 className="text-3xl font-display text-sofiaGreen">Coming Soon!</h1>
+      </div>
+    </>
   )
 }
 

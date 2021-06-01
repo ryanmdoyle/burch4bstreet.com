@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, routes } from '@redwoodjs/router'
+import { Helmet } from 'react-helmet'
 import NewMessage from 'src/components/NewMessage/NewMessage'
 import CircleArrowLeft from 'src/components/CircleArrowLeft/CircleArrowLeft'
 
@@ -28,6 +29,13 @@ I wish you the best in your search, however, in my opinion, your next Artistic D
 
   return (
     <>
+      <Helmet>
+        <title>Lyndsay Burch for B Street - Show Support</title>
+        <meta
+          name="description"
+          content="Show support for Lyndsay by sending the B Street board of directors an email."
+        />
+      </Helmet>
       <Link to={routes.home()}>
         <span className="text-sofiaGreen hover:text-sofiaGreenDark flex justify-center items-center">
           <CircleArrowLeft /> Go Back
