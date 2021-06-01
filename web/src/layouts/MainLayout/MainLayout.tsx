@@ -4,7 +4,7 @@ const MainLayout: React.FunctionComponent = ({ children }) => {
   return (
     <div className="w-screen min-h-screen background flex flex-col justify-between">
       <Toaster
-        position="bottom-right"
+        position="top-center"
         toastOptions={{ success: { duration: 5000 } }}
       />
       <section className="container mx-auto py-8">
