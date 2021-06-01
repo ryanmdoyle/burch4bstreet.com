@@ -2,10 +2,11 @@ import { Prisma } from '@prisma/client'
 import { db } from 'src/lib/db'
 import { requireAuth } from 'src/lib/auth'
 import { BeforeResolverSpecType } from '@redwoodjs/api'
+import { ServerClient } from 'postmark'
 
 import nodemailer from 'nodemailer'
 import md5 from 'md5'
-import { ServerClient } from 'postmark'
+import sanitizeHtml from 'sanitize-html'
 
 // Used when the environment variable REDWOOD_SECURE_SERVICES=1
 export const beforeResolver = (rules: BeforeResolverSpecType) => {
@@ -30,14 +31,32 @@ interface CreateMessageArgs {
 }
 
 export const createMessage = async ({ input }: CreateMessageArgs) => {
+  const sanitizedSubject = sanitizeHtml(input.subject)
+  const sanitizedMessage = sanitizeHtml(input.message)
   const client = new ServerClient(process.env.POSTMARK)
-  client.sendEmail({
+
+  // Sender Confirmation
+  client.sendEmailWithTemplate({
     From: 'ryan@burch4bstreet.com',
-    To: 'test@blackhole.postmarkapp.com',
-    Subject: input.subject,
-    HtmlBody: '<strong>Hello</strong> dear Postmark user.',
-    TextBody: input.message,
-    MessageStream: 'letter-notification',
+    To: 'ryan@burch4bstreet.com',
+    TemplateAlias: 'burch4bstreet-confirmation',
+    TemplateModel: {
+      from: input.from,
+      subject: sanitizedSubject,
+      message: sanitizedMessage,
+    },
+  })
+
+  // Recipient Notification
+  client.sendEmailWithTemplate({
+    From: 'ryan@burch4bstreet.com',
+    To: 'ryan@burch4bstreet.com',
+    TemplateAlias: 'burch4bstreet-confirmation-1',
+    TemplateModel: {
+      from: input.from,
+      subject: sanitizedSubject,
+      message: sanitizedMessage,
+    },
   })
   // const transporter = nodemailer.createTransport({
   //   host: 'smtp.transmail.com',
