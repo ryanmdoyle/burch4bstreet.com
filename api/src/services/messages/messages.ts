@@ -19,6 +19,16 @@ export const messages = () => {
   return db.message.findMany()
 }
 
+export const messagesPublic = () => {
+  return db.message.findMany({
+    select: {
+      id: true,
+      from: true,
+      message: true,
+    },
+  })
+}
+
 export const message = ({ id }: Prisma.MessageWhereUniqueInput) => {
   requireAuth({ role: 'ADMIN' })
   return db.message.findUnique({

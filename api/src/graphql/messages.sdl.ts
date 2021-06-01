@@ -9,6 +9,7 @@ export const schema = gql`
 
   type Query {
     messages: [Message!]!
+    messagesPublic: [Message!]!
     message(id: String!): Message
   }
 
