@@ -46,8 +46,9 @@ export const createMessage = async ({ input }: CreateMessageArgs) => {
 
   // Sender Confirmation
   client.sendEmailWithTemplate({
-    From: 'ryan@burch4bstreet.com',
-    To: 'ryan@burch4bstreet.com',
+    From: 'supportlyndsay@burch4bstreet.com',
+    To: input.email,
+    MessageStream: 'letter-confirmation',
     TemplateAlias: 'burch4bstreet-confirmation',
     TemplateModel: {
       from: input.from,
@@ -58,9 +59,10 @@ export const createMessage = async ({ input }: CreateMessageArgs) => {
 
   // Recipient Notification
   client.sendEmailWithTemplate({
-    From: 'ryan@burch4bstreet.com',
-    To: 'ryan@burch4bstreet.com',
-    TemplateAlias: 'burch4bstreet-confirmation-1',
+    From: 'supportlyndsay@burch4bstreet.com',
+    To: process.env.BOARD_EMAILS,
+    MessageStream: 'letter-notification',
+    TemplateAlias: 'burch4bstreet-notification',
     TemplateModel: {
       from: input.from,
       subject: sanitizedSubject,
