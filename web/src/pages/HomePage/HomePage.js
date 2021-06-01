@@ -13,6 +13,7 @@ const HomePage = () => {
           name="description"
           content="Support Lyndsay Burch for the new Artistic Director of B Street."
         />
+        <meta property="og:image" content="/lyndsay.jpeg" />
       </Helmet>
       <div className="w-full flex justify-center items-center mb-8">
         <SupportButton />

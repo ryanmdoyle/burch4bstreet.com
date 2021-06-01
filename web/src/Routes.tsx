@@ -19,11 +19,21 @@ const Routes = () => {
   return (
     <Router>
       <Route path="/login" page={LoginPage} name="login" />
-      <Route path="/comingsoon" page={ComingSoonPage} name="comingSoon" />
+      <Route
+        path="/comingsoon"
+        page={ComingSoonPage}
+        name="comingSoon"
+        prerender
+      />
       <Set wrap={[MainLayout]}>
-        <Route path="/" page={HomePage} name="home" />
-        <Route path="/show-support" page={ShowSupportPage} name="showSupport" />
-        <Route path="/letters" page={LettersPage} name="letters" />
+        <Route path="/" page={HomePage} name="home" prerender />
+        <Route
+          path="/show-support"
+          page={ShowSupportPage}
+          name="showSupport"
+          prerender
+        />
+        <Route path="/letters" page={LettersPage} name="letters" prerender />
         <Route notfound page={NotFoundPage} />
       </Set>
       <Private unauthenticated="home" role="ADMIN">
