@@ -116,9 +116,9 @@ const MessageForm = (props) => {
 
         <div className="rw-button-group">
           <Submit
-            disabled={recap === null}
+            disabled={recap === null || props.loading}
             className={`${
-              recap === null ? 'cursor-not-allowed' : ''
+              recap === null || props.loading ? 'cursor-not-allowed' : ''
             } rw-button bg-sofiaGreen hover:bg-sofiaGreenDark text-white disabled:opacity-50`}
           >
             Send!
