@@ -3,7 +3,7 @@ import { navigate, routes } from '@redwoodjs/router'
 import SupportButton from 'src/components/SupportButton/SupportButton'
 
 const HomePage = () => {
-  // navigate(routes.comingSoon())
+  navigate(routes.comingSoon())
   return (
     <>
       <div className="w-full flex justify-center items-center mb-8">
