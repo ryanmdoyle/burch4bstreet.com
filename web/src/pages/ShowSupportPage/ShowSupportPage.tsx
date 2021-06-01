@@ -36,7 +36,7 @@ I wish you the best in your search, however, in my opinion, your next Artistic D
       <h2 className="text-xl md:text-2xl lg:text-3xl text-sofiaGreen font-display my-4 text-center">
         Send a message of support to the B Street Board of Directors
       </h2>
-      <p className="font-body text-center">
+      <p className="font-body text-center text-gray-800">
         Select an option below to get started.
       </p>
       <div className="w-full flex justify-center items-center my-8">
