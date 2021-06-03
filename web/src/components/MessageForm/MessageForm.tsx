@@ -7,12 +7,20 @@ import {
   TextAreaField,
   Submit,
 } from '@redwoodjs/forms'
-import ReCAPTCHA from 'react-google-recaptcha'
 import { useState } from 'react'
+
+import ReCAPTCHA from 'react-google-recaptcha'
+import * as filestack from 'filestack-js'
 
 const MessageForm = (props) => {
   const [recap, setRecap] = useState(null)
+  const [uploadUrl, setUploadUrl] = useState(null)
+  const [uploadFilename, setUploadFilename] = useState(null)
+
   const onSubmit = (data) => {
+    data.url = uploadUrl
+    data.filename = uploadFilename
+
     if (recap !== null) {
       props.onSave(data, props?.message?.id)
     }
@@ -20,6 +28,26 @@ const MessageForm = (props) => {
 
   const onChange = (value) => {
     setRecap(value)
+  }
+
+  const handleUpload = () => {
+    const client = filestack.init(process.env.FILESTACK_API_KEY)
+
+    const options = {
+      onFileSelected: (file) => {
+        // If you throw any error in this function it will reject the file selection.
+        // The error message will be displayed to the user as an alert.
+        if (file.size > 1000 * 3000) {
+          throw new Error('File too big, select something smaller than 3MB')
+        }
+      },
+      onUploadDone: (data) => {
+        setUploadUrl(data.filesUploaded[0].url)
+        setUploadFilename(data.filesUploaded[0].filename)
+      },
+    }
+
+    client.picker(options).open()
   }
 
   return (
@@ -76,6 +104,26 @@ const MessageForm = (props) => {
         <FieldError name="email" className="rw-field-error text-red-500" />
 
         <Label
+          name="affiliation"
+          className="rw-label font-display text-sofiaGreen text-lg lg:text:lg"
+          errorClassName="rw-label font-display text-red-500 text-xl"
+        >
+          Professional Title/Company Affiliation
+        </Label>
+        <span className="text-gray-500 italic text-xs">Optional</span>
+        <TextField
+          name="affiliation"
+          defaultValue={props.message?.affiliation}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: false }}
+        />
+        <FieldError
+          name="affiliation"
+          className="rw-field-error text-red-500"
+        />
+
+        <Label
           name="subject"
           className="rw-label font-display text-sofiaGreen text-lg lg:text:lg"
           errorClassName="rw-label font-display text-red-500 text-xl"
@@ -106,6 +154,29 @@ const MessageForm = (props) => {
           validation={{ required: true }}
         />
         <FieldError name="message" className="rw-field-error text-red-500" />
+
+        <Label
+          name="upload"
+          className="rw-label font-display text-sofiaGreen text-lg lg:text:lg"
+          errorClassName="rw-label font-display text-red-500 text-xl"
+        >
+          Upload a file.
+        </Label>
+        <span className="text-gray-500 italic text-xs">
+          Optional - Upload a PDF or document with your message of support.
+        </span>
+        <div className="flex items-center">
+          <button
+            name="upload"
+            className="h-8 bg-sofiaGreen text-white rounded px-4 flex items-center justify-center my-4"
+            onClick={handleUpload}
+          >
+            UPLOAD
+          </button>
+          <span className="ml-4 text-sofiaGreen">
+            {uploadFilename ? `Uploaded: ${uploadFilename} ✅` : null}
+          </span>
+        </div>
 
         <div className="flex justify-center mt-8">
           <ReCAPTCHA

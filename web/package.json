@@ -17,6 +17,8 @@
     "@redwoodjs/forms": "0.32.2",
     "@redwoodjs/router": "0.32.2",
     "@redwoodjs/web": "0.32.2",
+    "filestack-js": "^3.23.1",
+    "filestack-react": "^4.0.0",
     "netlify-identity-widget": "^1.9.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

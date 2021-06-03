@@ -3,8 +3,11 @@ export const schema = gql`
     id: String!
     from: String!
     email: String!
+    affiliation: String
     subject: String
     message: String
+    filename: String
+    url: String
   }
 
   type Query {
@@ -16,15 +19,21 @@ export const schema = gql`
   input CreateMessageInput {
     from: String!
     email: String!
+    affiliation: String
     subject: String
     message: String
+    filename: String
+    url: String
   }
 
   input UpdateMessageInput {
     from: String
     email: String
+    affiliation: String
     subject: String
     message: String
+    filename: String
+    url: String
   }
 
   type Mutation {

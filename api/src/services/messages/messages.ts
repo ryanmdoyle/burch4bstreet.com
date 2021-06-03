@@ -4,7 +4,6 @@ import { requireAuth } from 'src/lib/auth'
 import { BeforeResolverSpecType } from '@redwoodjs/api'
 import { ServerClient } from 'postmark'
 
-import md5 from 'md5'
 import sanitizeHtml from 'sanitize-html'
 
 // Used when the environment variable REDWOOD_SECURE_SERVICES=1
@@ -52,8 +51,11 @@ export const createMessage = async ({ input }: CreateMessageArgs) => {
     TemplateAlias: 'burch4bstreet-confirmation',
     TemplateModel: {
       from: input.from,
+      affiliation: input.affiliation,
       subject: sanitizedSubject,
       message: sanitizedMessage,
+      filename: input.filename,
+      url: input.url,
     },
   })
 
@@ -65,19 +67,23 @@ export const createMessage = async ({ input }: CreateMessageArgs) => {
     TemplateAlias: 'burch4bstreet-notification',
     TemplateModel: {
       from: input.from,
+      affiliation: input.affiliation,
       subject: sanitizedSubject,
       message: sanitizedMessage,
+      filename: input.filename,
+      url: input.url,
     },
   })
 
-  // use md5 to hash email before saving (can be used to check for duplicates)
-  const emailHash = md5(input.email)
   return db.message.create({
     data: {
       from: input.from,
-      email: emailHash,
-      subject: input.subject,
-      message: input.message,
+      email: input.email,
+      affiliation: input.affiliation,
+      subject: sanitizedSubject,
+      message: sanitizedMessage,
+      filename: input.filename,
+      url: input.url,
     },
   })
 }
