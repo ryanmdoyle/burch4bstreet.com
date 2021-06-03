@@ -35,7 +35,7 @@ I wish you the best in your search, however, in my opinion, your next Artistic D
           name="description"
           content="Show support for Lyndsay by sending the B Street board of directors an email."
         />
-        <meta property="og:image" content="/lyndsay.jpeg" />
+        <meta property="og:image" content="/lyndsay.png" />
       </Helmet>
       <Link to={routes.home()}>
         <span className="text-sofiaGreen hover:text-sofiaGreenDark flex justify-center items-center">

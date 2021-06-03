@@ -12,7 +12,7 @@ const MainLayout: React.FunctionComponent = ({ children }) => {
         <div className="pt-4 px-4 lg:p-8 lg:h-1/3 w-full flex flex-col lg:flex-row justify-center items-center">
           <div className="w-1/2 lg:w-1/4 xl:w-1/5 lg:h-full flex justify-center items-center">
             <img
-              src="/lyndsay.jpeg"
+              src="/lyndsay.png"
               alt="headshot"
               className="rounded-full"
             ></img>
@@ -23,7 +23,7 @@ const MainLayout: React.FunctionComponent = ({ children }) => {
             </span>
             <span className="text-center block text-xl md:text-2xl lg:text-4xl text-gray-400 my-2 lg:my-8 font-subdisplay">
               {' '}
-              for B Street Theater{' '}
+              for B Street Theatre{' '}
             </span>
             <span className="text-center block text-3xl md:text-5xl lg:text-7xl text-white text-sofiaGreen font-bold font-display">
               Artistic Director

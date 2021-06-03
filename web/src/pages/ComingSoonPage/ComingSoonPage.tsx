@@ -6,7 +6,7 @@ const ComingSoonPage = () => {
       <Helmet>
         <title>Lyndsay Burch for B Street - Coming Soon</title>
         <meta name="description" content="Coming Soon!" />
-        <meta property="og:image" content="/lyndsay.jpeg" />
+        <meta property="og:image" content="/lyndsay.png" />
       </Helmet>
       <div className="w-screen h-screen flex justify-center items-center">
         <h1 className="text-3xl font-display text-sofiaGreen">Coming Soon!</h1>

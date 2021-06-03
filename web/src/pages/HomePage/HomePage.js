@@ -12,7 +12,7 @@ const HomePage = () => {
           name="description"
           content="Support Lyndsay Burch for the new Artistic Director of B Street."
         />
-        <meta property="og:image" content="/lyndsay.jpeg" />
+        <meta property="og:image" content="/lyndsay.png" />
       </Helmet>
       <div className="w-full flex justify-center items-center mb-8">
         <SupportButton />
@@ -46,10 +46,11 @@ const HomePage = () => {
         Lyndsay continues to cultivate B Street’s relationship with national
         organizations such as Theatre Communications Group, Theatre Bay Area and
         the National New Play Network (NNPN). B Street’s relationship with NNPN
-        has resulted in two Rolling World Premieres under Lyndsay’s direction as
-        well as the creation of the nationally-recognized New Comedies Festival
-        and the New American Theatre Festival (in partnership with In The Margin
-        Theatre Company).
+        has resulted in three Rolling World Premieres under Lyndsay’s direction,
+        NNPN choosing B Street Theatre as the location of NNPN’s National
+        Showcase of New Plays in 2018, as well as the creation of the
+        nationally-recognized New Comedies Festival and the New American Theatre
+        Festival (in partnership with In The Margin Theatre Company).
       </p>
       <br></br>
       <h3 className="font-display text-xl text-sofiaGreen">
