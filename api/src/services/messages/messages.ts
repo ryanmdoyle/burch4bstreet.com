@@ -8,7 +8,6 @@ import sanitizeHtml from 'sanitize-html'
 
 // Used when the environment variable REDWOOD_SECURE_SERVICES=1
 export const beforeResolver = (rules: BeforeResolverSpecType) => {
-  // rules.add(requireAuth)
   rules.skip()
 }
 
