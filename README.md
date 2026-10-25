@@ -1,24 +1,39 @@
-# Redwood
+# Burch 4 B-Street
 
-> **WARNING:** RedwoodJS software has not reached a stable version 1.0 and should not be considered suitable for production use. In the "make it work; make it right; make it fast" paradigm, Redwood is in the later stages of the "make it work" phase.
+**Live:** [burch4bstreet.netlify.app](https://burch4bstreet.netlify.app/)
 
-## Getting Started
-- [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
-- [Docs](https://redwoodjs.com/docs/introduction): using the Redwood Router, handling assets and files, list of command-line tools, and more.
-- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.
+A campaign site that collected public letters of support for Lyndsay Burch to
+become Artistic Director of B Street Theatre in Sacramento. Supporters write a
+letter (optionally attaching a file), it goes to the theatre's board by email,
+and it appears on a public "Letters" wall.
 
-### Setup
+## Features
 
-We use Yarn as our package manager. To get the dependencies installed, just do this in the root directory:
+- **Letter submission form** with optional file attachment (Filestack upload)
+- **Transactional email via Postmark templates**: each submission sends a
+  confirmation to the writer and a notification to the board
+- **Public letters page** that exposes only the writer's name and message;
+  email addresses and attachments stay private
+- **Admin area** (behind Netlify Identity, `ADMIN` role only) to review, edit,
+  and delete submissions
+- User input is sanitized with `sanitize-html` before it's emailed or stored
+- Marketing pages are prerendered for fast loads
 
-```terminal
+## Tech
+
+- [RedwoodJS](https://redwoodjs.com/): React frontend, GraphQL API, Prisma
+- PostgreSQL
+- Tailwind CSS
+- Postmark for email, Filestack for uploads
+- Netlify (hosting, serverless functions, Identity auth)
+- TypeScript, Jest scenario tests for the messages service
+
+## Running locally
+
+Set `DATABASE_URL`, `POSTMARK`, and `BOARD_EMAILS` in `.env`, then:
+
+```bash
 yarn install
+yarn rw prisma migrate dev
+yarn rw dev
 ```
-
-### Fire it up
-
-```terminal
-yarn redwood dev
-```
-
-Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`. 
